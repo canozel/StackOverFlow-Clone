@@ -1,0 +1,19 @@
+<ul class="list-group">
+  <% @questions.each do |question| %>
+    <li class="list-group-item">
+      <span class="badge">14</span>
+        <%= link_to question.title, question %>
+        <% if user_signed_in? && current_user == question.user %>
+           -
+          <%= link_to "Düzenle", edit_question_path(question), class: "label label-info" %> - 
+          <%= link_to "Sil", question, method: :delete, data: {confirm: "Emin misin?"}, class: "label label-danger" %>
+        <% end %> 
+        
+        <br><%= link_to time_ago_in_words(question.created_at), question %>
+    </li>
+  <% end %>
+
+  <%= will_paginate @questions %>
+</ul>
+
+<%= link_to "Yeni Soru Sor", new_question_path, class: "btn btn-primary" %>
