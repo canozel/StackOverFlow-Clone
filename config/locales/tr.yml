@@ -1,4 +1,5 @@
 tr:
+  name: "İsim"
   date:
     abbr_day_names:
     - Pzr
