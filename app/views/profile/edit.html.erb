@@ -1,5 +1,5 @@
-<%= simple_form_for @profile do |f| %>
-  <%= f.input :first_name, label: "İsim", placeholder: "İsminizi giriniz." %>
+<%= simple_form_for(@profile, html: { class: 'user_inline' })  do |f| %>
+  <%= f.input :first_name, label: "İsim", placeholder: 'İsminizi giriniz.' %>
   <%= f.input :last_name, label: "Soyisim", placeholder: "Soyisminizi giriniz." %>
   <%= f.input :phone, label: "Telefon", placeholder: "Telefon numaranızı giriniz." %>
 

@@ -11,7 +11,9 @@ class ProfileController < ApplicationController
   end
 
   def update
-    
+    if @profile.update(profile_params)
+      redirect_to profile_path(@profile), notice: "Güncelleme Başarılı.."
+    end
   end
 
   private
@@ -22,5 +24,10 @@ class ProfileController < ApplicationController
 
   def permitted?
     current_user == @profile.user
+  end
+
+  def profile_params
+    binding.pry
+    params.require(:profile).permit(:first_name, :last_name, :phone)
   end
 end

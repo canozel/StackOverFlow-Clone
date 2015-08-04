@@ -5,13 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
   <nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">StackOverFlow</a>
+      <div class="navbar-brand"><i class="fa fa-stack-overflow"></i> <%= link_to "Stackoverflow", root_path, style: "text-decoration:none;color:inherit" %></div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -24,11 +25,11 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <%= user_signed_in? ? current_user.email : "Misafir Kullanıcı" %> <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>
+          <%= user_signed_in? ? current_user.profile.full_name : "Misafir Kullanıcı" %> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <% if user_signed_in? %>
-              <li><%= link_to "Profilim", profile_path(current_user) %></li>
+              <li><%= link_to "Profilim", profile_path(current_user.profile) %></li>
               <li><%= link_to "Çıkış Yap", logout_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "Giriş Yap", login_path %></li>

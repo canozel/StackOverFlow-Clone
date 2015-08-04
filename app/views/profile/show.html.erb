@@ -11,4 +11,6 @@
   </div>  
 </div>
 
-<%= link_to "Profilimi Düzenle", edit_profile_path if current_user == @profile.user %>
+<%= link_to "Profilimi Düzenle", edit_profile_path ,class: "btn btn-default" if current_user == @profile.user %>
+
+<%= link_to "Geri", root_path, class: "btn btn-warning" %>

@@ -1,2 +1,10 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= @question.title %>
+  </div>
+  <div class="panel-body">
+     <%= @question.content %>
+  </div>
+</div>
+
+<%= link_to "Geri", :back, class: "btn btn-warning" %>
