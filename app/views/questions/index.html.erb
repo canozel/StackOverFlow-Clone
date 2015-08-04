@@ -1,5 +1,5 @@
 <ul class="list-group">
-  <% @questions.each do |question| %>
+  <% @questions.reverse_each do |question| %>
     <li class="list-group-item">
       <span class="badge">14</span>
         <%= link_to question.title, question %>
@@ -16,4 +16,5 @@
   <%= will_paginate @questions %>
 </ul>
 
-<%= link_to "Yeni Soru Sor", new_question_path, class: "btn btn-primary" %>
+
+<%= link_to "Yeni Soru Sor", new_question_path, class: "btn btn-primary" if current_user%>
