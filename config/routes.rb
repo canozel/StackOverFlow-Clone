@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   devise_for :users
   devise_scope :user do
     get "login", to: "devise/sessions#new", as: :login
@@ -11,7 +13,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'questions#index'
   resources :profile, only: [:show, :edit, :update]
-  resources :questions 
+  resources :questions
+  resources :answers, only: [:new, :edit, :create, :update] 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
