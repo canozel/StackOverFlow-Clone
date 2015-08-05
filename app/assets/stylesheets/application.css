@@ -14,17 +14,40 @@
  *= require_self
  */
 
- .duzenle, .sil {
-  opacity: 0.3;
-  background: none !important;
-  color: black !important;
+ /* --- Sıfırlamalar -- */
+
+a {
   text-decoration: none !important;
+  color: inherit ;
+}
+
+ /* --------------------*/
+
+.duzenle {
+  opacity: 0.3;
+  margin-left: 15px;
  }
- .duzenle:hover {
+.sil {
+  opacity: 0.3;
+  margin-left: 5px;
+}
+.duzenle:hover, .duzenle:hover a {
   opacity: 1;
   color: #5bc0de !important; 
  }
-.sil:hover {
+.sil:hover, .sil:hover a {
   opacity: 1;
   color: #d9534f !important;
+}
+.current-style {
+  border-left:red 10px solid;
+}
+.soru-baslik {
+  text-transform: uppercase;
+}
+.alt-bilgi {
+  margin-bottom: 0 !important;
+}
+.help-block a {
+  margin-right: 10px;
 }
