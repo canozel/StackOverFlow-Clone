@@ -1,9 +1,6 @@
 <ul class="list-group">
   <% @questions.reverse_each do |question| %>
-      <li class="list-group-item
-        <% if user_signed_in? && current_user == question.user %> 
-          current-style" 
-      <% end %>>
+      <li class='list-group-item <% if user_signed_in? && current_user == question.user %>current-style'<% end %>>
       <span class="badge">14</span>
 
         <%= link_to question.title, question, class: "soru-baslik" %>

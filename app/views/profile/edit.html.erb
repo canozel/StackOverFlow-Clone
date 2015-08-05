@@ -2,6 +2,7 @@
   <%= f.input :first_name, label: "İsim", placeholder: 'İsminizi giriniz.' %>
   <%= f.input :last_name, label: "Soyisim", placeholder: "Soyisminizi giriniz." %>
   <%= f.input :phone, label: "Telefon", placeholder: "Telefon numaranızı giriniz." %>
+  <%= f.input :avatar, as: :file %>
 
   <%= f.submit "Güncelle" , class: "btn btn-success"%>
 <% end %>
