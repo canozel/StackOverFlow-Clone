@@ -40,6 +40,12 @@ class QuestionsController < ApplicationController
     redirect_to root_path
   end
 
+  def date
+    array = []
+    params[:question].each { |k,v| array << v }
+    @date = Question.where( :created_at => (array.reverse.join("-").to_datetime..Date.today))
+  end
+
   private
 
   def permitted?
