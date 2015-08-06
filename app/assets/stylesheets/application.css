@@ -39,8 +39,11 @@ a {
   opacity: 1;
   color: #d9534f !important;
 }
-.current-style {
-  border-left:red 10px solid;
+.current-list {
+  border-left-color:#F71D46;
+}
+.current-badge {
+  background-color:#F71D46;
 }
 .soru-baslik {
   text-transform: uppercase;

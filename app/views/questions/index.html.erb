@@ -1,7 +1,13 @@
 <ul class="list-group">
   <% @questions.reverse_each do |question| %>
-      <li class='list-group-item <% if user_signed_in? && current_user == question.user %>current-style'<% end %>>
-      <span class="badge"><%= question.answers.count %></span>
+  <% if user_signed_in? && current_user == question.user %>
+    <li class="list-group-item current-list">
+    <span class="badge current-badge"><%= question.answers.count %></span>
+  <% else %>
+    <li class="list-group-item">
+    <span class="badge"><%= question.answers.count %></span>
+  <% end %>
+      
 
         <%= link_to question.title, question, class: "soru-baslik" %>
 
