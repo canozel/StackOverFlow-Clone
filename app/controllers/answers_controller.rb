@@ -1,4 +1,4 @@
-# encoding: utf-8
+#encoding: utf-8
 
 class AnswersController < ApplicationController
   before_action :authenticate_user!
