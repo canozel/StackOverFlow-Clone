@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class AnswersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_answer, except: [:create]
