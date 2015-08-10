@@ -62,9 +62,7 @@
         <div class="panel-heading">Hızlı Erişim</div>
         <div class="panel-body">
           <ul class="list-group">
-            <% Answer.last(6).each do |answer| %>
-              <li class="list-group-item"><%= link_to answer.comment[0..15], question_path(answer.question) %></li>
-            <% end %>
+            
           </ul>
         </div>
       </div>
