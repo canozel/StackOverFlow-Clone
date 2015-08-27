@@ -13,4 +13,28 @@
 
 <%= link_to "Profilimi Düzenle", edit_profile_path ,class: "btn btn-default" if current_user == @profile.user %>
 
-<%= link_to "Geri", root_path, class: "btn btn-warning" %>
+<%= link_to "Geri", root_path, class: "btn btn-warning pull-left " %>
+<% if user_signed_in? && current_user != @profile.user %>
+  <% if !friend?(@profile.user)  %>
+    <%= button_to "Arkadaş Ekle", friends_path(reciever_id: @profile.user), class: "btn btn-success " %><br>
+  <% else %>
+    <button type="button" class="btn btn-default disabled">Arkadaşlık Beklemede</button><br>
+  <% end %>
+<% end %>
+<p>
+<div class="panel panel-info">
+  <div class="panel-heading">Arkadaşlar</div>
+  <div class="panel-body">
+    <ul class="list-group">
+      <% my_friends.each_slice(4)  do |four_friend| %>
+        <div class="row">
+          <% four_friend.each do |friend| %>
+            <div class=" col-sm-3">
+              <li class="list-group-item"><%= friend.full_name %></li><br>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-
+  resources :friends, only: [:create] 
+    post 'condition', to: "friends#condition" 
 
   devise_for :users
   devise_scope :user do

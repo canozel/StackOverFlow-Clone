@@ -16,7 +16,7 @@
           <span class="sil"><i class="fa fa-trash-o"></i> <%= link_to "Sil", question, method: :delete, data: {confirm: "Emin misin?"} %></span>
         <% end %> 
         
-        <small class="help-block alt-bilgi"><i class="fa fa-clock-o"></i> <%= link_to time_ago_in_words(question.created_at), question %> <i class="fa fa-user"></i> <%= question.user.profile.full_name %></small>
+        <small class="help-block alt-bilgi"><i class="fa fa-clock-o"></i> <%= link_to time_ago_in_words(question.created_at), question %> <i class="fa fa-user"></i> <%= link_to question.user.profile.full_name, profile_path(question.user.profile) %></small>
     </li>
   <% end %>
 
